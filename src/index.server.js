@@ -1,7 +1,6 @@
 const express = require('express');
 const app = express();
 const env = require('dotenv');
-const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const authRoutes = require('./routes/auth');
 const adminRoutes = require('./routes/admin/admin');
