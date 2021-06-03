@@ -2,8 +2,11 @@ const express = require('express');
 const app = express();
 const env = require('dotenv');
 const mongoose = require('mongoose');
+
+//routes
 const authRoutes = require('./routes/auth');
 const adminRoutes = require('./routes/admin/admin');
+const categoryRoutes = require('./routes/category');
 
 // environment variables 
 env.config();
@@ -24,9 +27,10 @@ mongoose.connect(
 
 app.use(express.json());
 
-
+//routes
 app.use('/api',authRoutes);
 app.use('/api',adminRoutes);
+app.use('/api',categoryRoutes);
 
 
 app.listen(process.env.PORT, () =>{
