@@ -31,8 +31,10 @@ exports.addCategory = async (req,res) => {
     }
     else{
         const categoryObj = {
-            name:req.body.name,
-            slug:slugify(req.body.name)
+            name:req.body.name
+        }
+        if(req.file){
+            categoryObj.categoryImage = process.env.BUCKET_URL + '/public/' + req.file.filename
         }
         if(req.body.parentId){
             categoryObj.parentId = req.body.parentId;
