@@ -3,6 +3,7 @@ const app = express();
 const env = require('dotenv');
 const mongoose = require('mongoose');
 const path = require('path');
+const cors = require('cors');
 
 //routes
 const authRoutes = require('./routes/auth');
@@ -28,6 +29,7 @@ mongoose.connect(
     console.log("Database connected");
   });
 
+app.use(cors())
 app.use(express.json());
 //open static folder in public mode
 app.use('/public',express.static(path.join(__dirname, 'uploads'))); 
