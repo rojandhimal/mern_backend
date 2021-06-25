@@ -20,7 +20,7 @@
     "nodemon": "^2.0.7"
   },
   "scripts": {
-    "start": "nodemon ./src/index.server.js"
+    "start": "node ./src/index.server.js"
   },
   "repository": {
     "type": "git",
@@ -40,10 +40,8 @@
   "bugs": {
     "url": "https://github.com/rojandhimal/mern_backend/issues"
   },
-
   "engines": {
     "node": ">=10.0.0"
   },
   "homepage": "https://github.com/rojandhimal/mern_backend#readme"
-
 }
